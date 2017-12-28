@@ -1,6 +1,6 @@
 package proxy.dynamicProxy.cglib;
 
-public class Test {
+public class Client {
     public static void main(String[] args){
         Image image = ProxyImage.createProxyImage("test.jpg");
         image.display();
