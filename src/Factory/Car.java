@@ -9,7 +9,7 @@ public class Car {
     private Engine engine;
 
     public void run(){
-        System.out.print("This is a car with "+ wheel.getName() +" and "+ engine.getName());
+        System.out.println("This is a car with "+ wheel.getName() +" and "+ engine.getName());
     }
 
     public Wheel getWheel() {

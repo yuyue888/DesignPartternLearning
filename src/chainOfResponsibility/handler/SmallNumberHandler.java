@@ -6,7 +6,7 @@ package chainOfResponsibility.handler;
 public class SmallNumberHandler extends Handler {
     @Override
     public void handle(int number) {
-        if (number < 10) {
+        if (number < 10 && number >= 0) {
             System.out.println("SmallNumberHandler deal this number:" + number);
         } else {
             if (this.getNextHandle() != null) {

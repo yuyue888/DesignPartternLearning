@@ -6,11 +6,24 @@ package Factory;
  * Created by ssc on 2017/12/17.
  */
 public class ExpensiveCarFactory extends AbstractCarFactory {
+    private static ExpensiveCarFactory expensiveCarFactory;
+
+    private ExpensiveCarFactory(){}
+
+    public static ExpensiveCarFactory getInstance(){
+        if(expensiveCarFactory == null){
+            expensiveCarFactory = new ExpensiveCarFactory();
+        }
+        return expensiveCarFactory;
+    }
+
     @Override
-    Car createCar() {
-        Car car = new Car();
-        car.setEngine(new ExpensiveEngine());
-        car.setWheel(new ExpensiveWheel());
-        return car;
+    Wheel getWheel() {
+        return new ExpensiveWheel();
+    }
+
+    @Override
+    Engine getEngine() {
+        return new ExpensiveEngine();
     }
 }

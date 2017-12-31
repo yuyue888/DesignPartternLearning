@@ -6,11 +6,24 @@ package Factory;
  * Created by ssc on 2017/12/17.
  */
 public class CheepCarFactory extends AbstractCarFactory {
+    private static CheepCarFactory cheepCarFactory;
+
+    private CheepCarFactory(){}
+
+    public static AbstractCarFactory getInstance(){
+        if(cheepCarFactory == null){
+            cheepCarFactory = new CheepCarFactory();
+        }
+        return cheepCarFactory;
+    }
+
     @Override
-    Car createCar() {
-        Car car = new Car();
-        car.setWheel(new CheepWheel());
-        car.setEngine(new CheepEngine());
-        return car;
+    Wheel getWheel() {
+        return new CheepWheel();
+    }
+
+    @Override
+    Engine getEngine() {
+        return new CheepEngine();
     }
 }
